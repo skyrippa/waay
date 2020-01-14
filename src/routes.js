@@ -1,11 +1,20 @@
-import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer} from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import Sign from './pages/signIn/index';
+import MenuInicial from './pages/menuInicial/index';
+import SignIn from './pages/signIn/index';
 import SignInLojista from './pages/signInLojista/index';
 import Main from './pages/main/index';
 
-const AppNavigator = createStackNavigator({
+const mainNavigation = createSwitchNavigator({
+	MenuInicial: {
+		screen: MenuInicial
+	},
+	SignIn: {
+		screen: SignIn,
+		navigationOptions: {
+			headerShown: false,
+		}
+	},
 	SignInLojista: {
 		screen: SignInLojista,
 		navigationOptions: {
@@ -20,4 +29,4 @@ const AppNavigator = createStackNavigator({
 	},
 })
 
-export default createAppContainer(AppNavigator);
+export default createAppContainer(mainNavigation);
