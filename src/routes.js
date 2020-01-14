@@ -1,12 +1,13 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer} from 'react-navigation';
 
-import SignIn from './pages/signIn/index';
+import Sign from './pages/signIn/index';
+import SignInLojista from './pages/signInLojista/index';
 import Main from './pages/main/index';
 
 const AppNavigator = createStackNavigator({
-	SignIn: {
-		screen: SignIn,
+	SignInLojista: {
+		screen: SignInLojista,
 		navigationOptions: {
 			headerShown: false,
 		}

@@ -12,26 +12,26 @@ import {
 } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 
-import styles from './styles';
+import styles from '../signIn/styles';
 import user from '../../services/user.json';
 
-export default class SignIn extends Component {
+export default class SignInLojista extends Component {
 
 	constructor(props) {
     super(props);
     this.state = {
-    	cpf: '',
+    	cnpj: '',
     	senha: '',
-    	erroCpf: '',
+    	erroCnpj: '',
     	erroDados: '',
     };
   }
 
-  onChangeCpfText = cpf => {
-  	if (cpf.length === 0) {
-  		this.setState({ cpf, erroCpf: '' });
+  onChangeCnpjText = cnpj => {
+  	if (cnpj.length === 0) {
+  		this.setState({ cnpj, erroCnpj: '' });
   	}
-  	this.setState({ cpf });
+  	this.setState({ cnpj });
   }
 
   onChangeSenhaText = senha => {
@@ -42,16 +42,16 @@ export default class SignIn extends Component {
   }
 
   logar = () => {
-  	if (this.cpfField.isValid()) {
+  	if (this.cnpjField.isValid()) {
 
-	  	if (this.state.cpf === user.cpf && this.state.senha === user.senha) {
-	  		this.setState({ erroDados: '', erroCpf: '' });
-	  		this.props.navigation.navigate('Main', { cpf: this.state.cpf });
+	  	if (this.state.cnpj === user.cnpj && this.state.senha === user.senha) {
+	  		this.setState({ erroDados: '', erroCnpj: '' });
+	  		this.props.navigation.navigate('Main', { cnpj: this.state.cnpj });
 	  	} else {
 	  		this.setState({erroDados: 'Usuário ou senha incorretos'});
 	  	}
 	  } else {
-			this.setState({erroCpf: 'CPF inválido!'});
+			this.setState({erroCnpj: 'cnpj inválido!'});
 	  }
   }
 
@@ -69,25 +69,25 @@ export default class SignIn extends Component {
 					<StatusBar backgroundColor="#18B4B1" barStyle="light-content" />
 					<View style={styles.header}>
 						<Text style={styles.title}>Waay</Text>
+						<Text style={styles.subtitle}>LOJISTA</Text>
 					</View>
 		
 					<View style={styles.form}>
 					<View>
-						<Text style={styles.label}>CPF:</Text>
+						<Text style={styles.label}>CNPJ:</Text>
 						<TextInputMask
-							type={'cpf'}
+							type={'cnpj'}
 							style={styles.inputField}
-							onChangeText={this.onChangeCpfText}
-							value={this.state.cpf}
+							onChangeText={this.onChangeCnpjText}
+							value={this.state.cnpj}
 	    				keyboardType='number-pad'
-	    				maxLength={14}
-	    				ref={(ref) => this.cpfField = ref}
+	    				maxLength={18}
+	    				ref={(ref) => this.cnpjField = ref}
 						/>
-						<Text style={styles.errorText}>{this.state.erroCpf}</Text>
+						<Text style={styles.errorText}>{this.state.erroCnpj}</Text>
 					</View>
 					<View>
-						<Text style={styles.label}>SENHA DE ACESSO</Text>
-						<Text style={styles.passwordHelpLabel}>(Não é a senha do cartão):</Text>
+						<Text style={styles.label}>SENHA DE ACESSO:</Text>
 						<TextInput
 							style={styles.inputField}
 							onChangeText={this.onChangeSenhaText}

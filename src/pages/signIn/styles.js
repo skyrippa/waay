@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
 		fontSize: 60,
 		fontFamily: 'typold_condensed_black'
 	},
+	subtitle: {
+		color: '#eee',
+		fontSize: 20,
+		fontFamily: 'opensans_regular',
+		alignSelf: 'center'
+	},
 	// estilo form
 	form: {
 		flex: 2,
