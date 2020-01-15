@@ -46,7 +46,7 @@ export default class SignInLojista extends Component {
 
 	  	if (this.state.cnpj === user.cnpj && this.state.senha === user.senha) {
 	  		this.setState({ erroDados: '', erroCnpj: '' });
-	  		this.props.navigation.navigate('Main', { cnpj: this.state.cnpj });
+	  		this.props.navigation.navigate('MainNavigation');
 	  	} else {
 	  		this.setState({erroDados: 'Usuário ou senha incorretos'});
 	  	}

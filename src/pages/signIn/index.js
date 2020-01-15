@@ -20,8 +20,8 @@ export default class SignIn extends Component {
 	constructor(props) {
     super(props);
     this.state = {
-    	cpf: '',
-    	senha: '',
+    	cpf: '937.268.892-48',
+    	senha: '1234',
     	erroCpf: '',
     	erroDados: '',
     };
@@ -46,7 +46,7 @@ export default class SignIn extends Component {
 
 	  	if (this.state.cpf === user.cpf && this.state.senha === user.senha) {
 	  		this.setState({ erroDados: '', erroCpf: '' });
-	  		this.props.navigation.navigate('Main', { cpf: this.state.cpf });
+	  		this.props.navigation.navigate('MainNavigation');
 	  	} else {
 	  		this.setState({erroDados: 'Usuário ou senha incorretos'});
 	  	}

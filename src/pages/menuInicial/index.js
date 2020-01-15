@@ -15,7 +15,7 @@ export default class MenuInicial extends Component {
 				<StatusBar backgroundColor="#18B4B1" barStyle="light-content" />
 				<View style={styles.header}>
 					<Text style={styles.title}>Waay</Text>
-					<Text style={styles.description}>App de Fatura de Cartões</Text>
+					<Text style={styles.description}>App de fatura de cartões</Text>
 				</View>
 				<View style={styles.body}>
 					<TouchableOpacity
@@ -28,7 +28,7 @@ export default class MenuInicial extends Component {
 						style={styles.button}
 						onPress={() => this.props.navigation.navigate('SignInLojista')}
 					>
-						<Text style={styles.buttonText}>LOGISTA</Text>
+						<Text style={styles.buttonText}>LOJISTA</Text>
 					</TouchableOpacity>
 				</View>
 				<View>

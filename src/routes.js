@@ -1,11 +1,103 @@
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { 
+	createAppContainer, 
+	createSwitchNavigator,
+} from 'react-navigation';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 
+import React from 'react';
+import { Button, Image } from 'react-native';
+// telas login
 import MenuInicial from './pages/menuInicial/index';
 import SignIn from './pages/signIn/index';
 import SignInLojista from './pages/signInLojista/index';
-import Main from './pages/main/index';
 
-const mainNavigation = createSwitchNavigator({
+// telas do app
+import Faturas from './pages/faturas/index';
+import Cartoes from './pages/cartoes/index';
+import Localizacoes from './pages/localizacoes/index';
+
+const MainNavigation = createBottomTabNavigator(
+	{
+		Cartoes: {
+			screen: Cartoes,
+		},
+		Faturas: {
+			screen: Faturas,
+			navigationOptions: {
+				title: '',
+			}
+		},
+		Localizacoes: {
+			screen: Localizacoes,
+			navigationOptions: {
+				title: '',
+				alignItems: 'center',
+				justifyContent: 'center'
+			}
+		},
+	},
+	{
+		defaultNavigationOptions: ({navigation}) => ({
+			tabBarIcon: ({ focused, horizontal, tintColor }) => {
+				const { routeName } = navigation.state;
+				if (routeName === 'Faturas') {
+					return (
+						<Image 
+							source={
+								focused
+									? require('../assets/images/home-on.png')
+									: require('../assets/images/home-off.png')
+							}
+							style={{
+								width: 30,
+								height: 30,
+							}}
+						/>
+					)
+				} else if (routeName === 'Localizacoes') {
+					return (
+						<Image 
+							source={
+								focused
+									? require('../assets/images/location-on.png')
+									: require('../assets/images/location-off.png')
+							}
+							style={{
+								width: 30,
+								height: 30,
+							}}
+						/>
+					)
+				} else if (routeName === 'Cartoes') {
+					return (
+						<Image 
+							source={
+								focused
+									? require('../assets/images/card-on.png')
+									: require('../assets/images/card-off.png')
+							}
+							style={{
+								width: 36,
+								height: 36,
+							}}
+						/>
+					)
+				}
+			}
+		}),
+		initialRouteName: 'Faturas',
+		tabBarOptions: {
+			style: { 
+				backgroundColor: '#fff',
+				height: 60,
+			},
+			showLabel: false,
+		},
+	},
+)
+
+const App = createSwitchNavigator({
 	MenuInicial: {
 		screen: MenuInicial
 	},
@@ -21,12 +113,12 @@ const mainNavigation = createSwitchNavigator({
 			headerShown: false,
 		}
 	},
-	Main: {
-		screen: Main,
+	MainNavigation: {
+		screen: MainNavigation,
 		navigationOptions: {
 			title: 'WAAY'
 		}
 	},
 })
 
-export default createAppContainer(mainNavigation);
+export default createAppContainer(App);
