@@ -20,8 +20,8 @@ export default class SignInLojista extends Component {
 	constructor(props) {
     super(props);
     this.state = {
-    	cnpj: '',
-    	senha: '',
+    	cnpj: '82.264.904/0001-99',
+    	senha: '1234',
     	erroCnpj: '',
     	erroDados: '',
     };
@@ -46,7 +46,7 @@ export default class SignInLojista extends Component {
 
 	  	if (this.state.cnpj === user.cnpj && this.state.senha === user.senha) {
 	  		this.setState({ erroDados: '', erroCnpj: '' });
-	  		this.props.navigation.navigate('MainNavigation');
+	  		this.props.navigation.navigate('Vendas');
 	  	} else {
 	  		this.setState({erroDados: 'Usuário ou senha incorretos'});
 	  	}

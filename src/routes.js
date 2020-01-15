@@ -16,6 +16,7 @@ import SignInLojista from './pages/signInLojista/index';
 import Faturas from './pages/faturas/index';
 import Cartoes from './pages/cartoes/index';
 import Localizacoes from './pages/localizacoes/index';
+import Vendas from './pages/vendas/index';
 
 const MainNavigation = createBottomTabNavigator(
 	{
@@ -24,17 +25,9 @@ const MainNavigation = createBottomTabNavigator(
 		},
 		Faturas: {
 			screen: Faturas,
-			navigationOptions: {
-				title: '',
-			}
 		},
 		Localizacoes: {
 			screen: Localizacoes,
-			navigationOptions: {
-				title: '',
-				alignItems: 'center',
-				justifyContent: 'center'
-			}
 		},
 	},
 	{
@@ -119,6 +112,9 @@ const App = createSwitchNavigator({
 			title: 'WAAY'
 		}
 	},
+	Vendas: {
+		screen: Vendas,
+	}
 })
 
 export default createAppContainer(App);
