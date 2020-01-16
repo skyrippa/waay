@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Modal } from 'react-native';
 
 import CompraDetalhes from '../compraDetalhes/index';
 
@@ -10,14 +10,23 @@ export default class Compra extends Component {
     super(props);
     this.state = {
     	compra: props.data,
+    	isModalVisible: false,
     }
+  }
+
+  changeModalVisibility = (bool) => {
+  	this.setState({ isModalVisible: bool });
   }
 
 	render() {
 		const { data, hora, valor, empresa } = this.state.compra;
 
 		return(
-			<View style={styles.container}>
+			<View>
+			<TouchableOpacity
+					onPress={() => this.changeModalVisibility(true)}
+				>
+			<View style={styles.container}>	
 					<View style={styles.col1}>
 						<Text style={styles.dia}>{data}</Text>
 						<Text style={styles.hora}>{hora}</Text>
@@ -29,7 +38,21 @@ export default class Compra extends Component {
 						<Text style={styles.valor}>{valor}</Text>
 						<Text style={styles.empresa}>{empresa}</Text>
 					</View>
+				
 			</View>
+			</TouchableOpacity>
+				<Modal
+					transparent={true}
+					visible={this.state.isModalVisible}
+					onRequestClose={() => this.changeModalVisibility(false)}
+					animationType='fade'
+				>
+					<CompraDetalhes 
+						changeModalVisibility={this.changeModalVisibility}
+						data={this.state.compra}
+					/>
+				</Modal>
+				</View>
 		)
 	}
 }

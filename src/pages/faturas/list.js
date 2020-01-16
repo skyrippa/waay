@@ -4,12 +4,14 @@ import {
 	Text, 
 	FlatList, 
 	Image,
-	TouchableOpacity,
+	TouchableHighlight,
+	Modal,
 } from 'react-native';
 
 import styles from './style';
 
 import Compra from '../compra/index';
+import CompraDetalhes from '../compraDetalhes/index';
 import ListHeader from './listHeader';
 
 export default class List extends Component {
@@ -22,7 +24,7 @@ export default class List extends Component {
 
   renderItem = ({ item }) => (
 		<View>
-			<Compra data={item} />
+				<Compra data={item} />
 		</View>
 	)
 
