@@ -2,5 +2,114 @@
 	"nome": "João Carlos",
 	"cpf": "937.268.892-48",
 	"cnpj": "82.264.904/0001-99",
-	"senha": "1234"
+	"senha": "1234",
+	"saldo": "R$ 500,03",
+	"faturaAnterior": "R$345,90",
+	"faturaAtual": "R$345,90",
+	"compras": [
+		{
+			"_id": "1",
+			"data": "14/FEV",
+			"hora": "09:33",
+			"valor": "R$ 45,09",
+			"empresa": "Supermercado Fabricia das Dores",
+			"endereco": "Rua 5"
+		},
+		{
+			"_id": "2",
+			"data": "09/JAN",
+			"hora": "09:33",
+			"valor": "R$ 5,09",
+			"empresa": "Mercadinho Jak Dores",
+			"endereco": "Rua 10"
+		},
+		{
+			"_id": "3",
+			"data": "14/FEV",
+			"hora": "09:33",
+			"valor": "R$ 45,09",
+			"empresa": "Supermercado Fabricia das Dores",
+			"endereco": "Rua 5"
+		},
+		{
+			"_id": "4",
+			"data": "09/JAN",
+			"hora": "09:33",
+			"valor": "R$ 5,09",
+			"empresa": "Mercadinho Jak Dores",
+			"endereco": "Rua 10"
+		},
+		{
+			"_id": "5",
+			"data": "14/FEV",
+			"hora": "09:33",
+			"valor": "R$ 45,09",
+			"empresa": "Supermercado Fabricia das Dores",
+			"endereco": "Rua 5"
+		},
+		{
+			"_id": "6",
+			"data": "09/JAN",
+			"hora": "09:33",
+			"valor": "R$ 5,09",
+			"empresa": "Mercadinho Jak Dores",
+			"endereco": "Rua 10"
+		},
+		{
+			"_id": "7",
+			"data": "14/FEV",
+			"hora": "09:33",
+			"valor": "R$ 45,09",
+			"empresa": "Supermercado Fabricia das Dores",
+			"endereco": "Rua 5"
+		},
+		{
+			"_id": "8",
+			"data": "09/JAN",
+			"hora": "09:33",
+			"valor": "R$ 5,09",
+			"empresa": "Mercadinho Jak Dores",
+			"endereco": "Rua 10"
+		},
+		{
+			"_id": "9",
+			"data": "14/FEV",
+			"hora": "09:33",
+			"valor": "R$ 45,09",
+			"empresa": "Supermercado Fabricia das Dores",
+			"endereco": "Rua 5"
+		},
+		{
+			"_id": "10",
+			"data": "09/JAN",
+			"hora": "09:33",
+			"valor": "R$ 5,09",
+			"empresa": "Mercadinho Jak Dores",
+			"endereco": "Rua 10"
+		},
+		{
+			"_id": "11",
+			"data": "14/FEV",
+			"hora": "09:33",
+			"valor": "R$ 45,09",
+			"empresa": "Supermercado Fabricia das Dores",
+			"endereco": "Rua 5"
+		},
+		{
+			"_id": "12",
+			"data": "09/JAN",
+			"hora": "09:33",
+			"valor": "R$ 5,09",
+			"empresa": "Mercadinho Jak Dores",
+			"endereco": "Rua 10"
+		},
+		{
+			"_id": "13",
+			"data": "14/FEV",
+			"hora": "09:33",
+			"valor": "R$ 45,09",
+			"empresa": "Supermercado Fabricia das Dores",
+			"endereco": "Rua 5"
+		}
+	]
 }
