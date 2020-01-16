@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 import Header from './header';
 import Info from './info';
 import List from './list';
+import Categoria from './categoria'
 
 import user from '../../services/user.json';
 
@@ -13,6 +14,7 @@ export default class Faturas extends Component {
 		return(
 			<View style={{flex:1}}>
 				<Header />
+				<Categoria />
 				<Info data={user}/>
 				<List data={user.compras}/>
 			</View>

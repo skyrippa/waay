@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
 	// header
@@ -21,9 +23,8 @@ const styles = StyleSheet.create({
 	},
 	saldo: {
 		flex: 1,
-		alignItems: 'flex-start',
-		justifyContent: 'center',
-		margin: 10,
+		marginTop: 10,
+		marginLeft: width * 0.03,
 	},
 	saldoText: {
 		fontSize: 14,
@@ -39,8 +40,11 @@ const styles = StyleSheet.create({
 	faturas: {
 		flex: 1,
 		flexDirection: 'row',
-		justifyContent: 'space-around' ,
-		marginLeft: -15,
+		justifyContent: 'space-around',
+		marginLeft: width * -0.04,
+	},
+	fatura: {
+		// marginLeft: ,
 	},
 	faturaText: {
 		fontSize: 14,
@@ -71,6 +75,30 @@ const styles = StyleSheet.create({
 		width: 35,
 		height: 35,
 		margin: 10,
+	},
+	categoria: {
+		flexDirection: 'row',
+		justifyContent: 'space-around',
+		alignItems: 'center',
+		flex: 0.8,
+		backgroundColor: '#fff',
+	},
+	alimentacaoText: {
+		fontSize: 18,
+		fontFamily: 'asap_regular',
+		color: '#444'
+	},
+	combustivelText: {
+		fontSize: 15,
+		fontFamily: 'asap_regular',
+		color: '#666'
+	},
+	divisor: {
+		margin: -100,
+		height: 8,
+		width: 8,
+		backgroundColor: '#18B4B1',
+		borderRadius: 50,
 	},
 })
 

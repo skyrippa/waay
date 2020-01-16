@@ -35,11 +35,11 @@ export default class Info extends Component {
 					<Text style={styles.saldoValor}>{this.state.saldo}</Text>
 				</View>
 				<View style={styles.faturas}>
-					<View>
+					<View style={styles.fatura}>
 						<Text style={styles.faturaText}>Gastos do mês anterior</Text>
 						<Text style={styles.faturaValor}>{this.state.faturaAnterior}</Text>
 					</View>
-					<View>
+					<View style={styles.fatura}>
 						<Text style={styles.faturaText}>Gastos do mês atual</Text>
 						<Text style={styles.faturaValor}>{this.state.faturaAtual}</Text>
 					</View>
