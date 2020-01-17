@@ -1,5 +1,5 @@
 {
-	"nome": "João Carlos",
+	"nome": "JOSÉ DA SILVA SANTOS",
 	"cpf": "937.268.892-48",
 	"cnpj": "82.264.904/0001-99",
 	"senha": "1234",
@@ -123,6 +123,23 @@
 			"empresa": "Supermercado Fabricia das Dores",
 			"endereco": "Rua 5",
 			"telefone": "3649-4040"
+		}
+	],
+	"cartoes": [
+		{
+			"_id": "1",
+			"banco": "visa",
+			"numero": "**** 0212"
+		},
+		{
+			"_id": "2",
+			"banco": "mastercard",
+			"numero": "**** 0212"
+		},
+		{
+			"_id": "3",
+			"banco": "purple",
+			"numero": "**** 0212"
 		}
 	]
 }
