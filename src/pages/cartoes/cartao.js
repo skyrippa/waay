@@ -3,10 +3,8 @@ import {
 	ImageBackground, 
 	View, 
 	Text, 
-	TouchableHighlight, 
 	Dimensions,
 	Image,
-	ToastAndroid,
 } from 'react-native';
 
 import styles from './style';
@@ -47,10 +45,6 @@ export default class Cartao extends Component {
 		}
 	}
 
-	onPress = () => {
-		ToastAndroid.show('A pikachu appeared nearby !', ToastAndroid.SHORT);
-	}
-
 	render() {
 		const { width } = Dimensions.get('window');
 		const { banco, numero } = this.state.data;
@@ -58,11 +52,6 @@ export default class Cartao extends Component {
 		const backgroundImage = this.pickBackgroundImage(banco);
 
 		return (
-			<TouchableHighlight
-				onPress={this.onPress}
-				underlayColor='white'
-				activeOpacity={1}
-			>
 				<View style={styles.card}>
 					<ImageBackground
 						source={this.pickBackgroundImage(banco)}
@@ -87,12 +76,6 @@ export default class Cartao extends Component {
 						</View>
 					</ImageBackground>
 				</View>
-			</TouchableHighlight>
 		)
 	}
 }
-
-// <Image 
-// 							source={this.pickQrCode(banco)} 
-// 							style={styles.qrCode}
-// 						/>

@@ -5,10 +5,9 @@ import {
 	FlatList, 
 	Image,
 	TouchableHighlight,
-	Modal,
 } from 'react-native';
 
-import Cartao from './cartao';
+import CartaoModal from './cartaoModal';
 
 import styles from './style';
 
@@ -23,7 +22,7 @@ export default class List extends Component {
 
   renderItem = ({ item }) => (
 		<View>
-				<Cartao data={item} username={this.state.username}/>
+				<CartaoModal data={item} username={this.state.username}/>
 		</View>
 	)
 

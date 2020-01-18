@@ -4,7 +4,6 @@ import {
 	Text, 
 	TouchableHighlight,
 	TouchableOpacity,
-	StyleSheet,
 	Dimensions,
 	ToastAndroid,
 } from 'react-native';
@@ -77,11 +76,3 @@ export default class CompraDetalhes extends Component {
 		)
 	}
 }
-
-//<TouchableHighlight
-// 	onPress={() => this.closeModal()}
-// 	style={styles.buttonCancel}
-// 	underlayColor={'#f1f1f1'}
-// >
-// 	<Text style={styles.text}>Voltar</Text>
-// </TouchableHighlight>
