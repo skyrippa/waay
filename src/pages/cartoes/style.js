@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
     borderRadius: 14,
     padding: 10,
-    margin: 15,
+    margin: 10,
   },
   buttonText: {
     textAlign: 'center',
@@ -105,10 +105,11 @@ const styles = StyleSheet.create({
   tipText: {
     fontFamily: 'asap_regular',
     fontSize: 12,
+    margin: 2,
   },
   leitorQrCode: {
-    width: width/1.6,
-    height: width/1.6,
+    width: width-120,
+    height: width-120,
   },
   returnButton: {
     width: 40,
