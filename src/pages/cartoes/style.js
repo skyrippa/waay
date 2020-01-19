@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     textAlign: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#f2f2f2',
     // borderRadius: 10,
     // borderColor: '#000',
     // borderWidth: 1,

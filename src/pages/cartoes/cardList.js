@@ -28,7 +28,7 @@ export default class List extends Component {
 
 	render() {
 		return(
-			<View style={{flex:1}}>
+			<View style={{flex:1, backgroundColor: '#f2f2f2'}}>
 				<FlatList 
 					data={this.state.cartoes}
 					renderItem={this.renderItem}
