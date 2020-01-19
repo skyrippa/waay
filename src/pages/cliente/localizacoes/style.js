@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		width: width-100,
 		textAlign: 'center',
+		padding: 10,
+		color: '#666'
 	},
 	searchButton: {
 		width: 40,
@@ -53,15 +55,38 @@ const styles = StyleSheet.create({
 		width: width-30,
 		padding: 10,
 	},
+	dadosTitle: {
+		fontSize: 18,
+		fontFamily: 'roboto_bold',
+		color: '#222',
+	},
+	endereco: {
+		flexDirection: 'row',
+	},
+	categoria: {
+		fontSize: 16,
+		color: '#333',
+		fontFamily: 'roboto_medium',
+	},
+	valor: {
+		fontSize: 16,
+		fontFamily: 'asap_regular',
+		color: '#333',
+	},
+	phoneNumber: {
+		flexDirection: 'row',
+	},
 	comoChegarButton: {
 		alignSelf: 'flex-start',
-		padding: 10,
-		marginTop: 2,
+		padding: 6,
+		marginTop: 8,
+		marginBottom: 8,
 		backgroundColor: 'green',
 		borderRadius: 8,
 	},
 	comoChegarText: {
 		color: '#fff',
+		fontFamily: 'asap_regular',
 	}
 });
 
