@@ -37,8 +37,8 @@ export default class Localizacoes extends Component {
 
 		if (viewport !== undefined) {
 			let newRegion = {
-				latitude: viewport.latitudeSW,
-				longitude: viewport.longitudeSW,
+				latitude: ((viewport.latitudeSW + viewport.latitudeNE)/2),
+				longitude: ((viewport.longitudeSW + viewport.longitudeNE)/2),
 				latitudeDelta: viewport.latitudeNE - viewport.latitudeSW,
 				longitudeDelta: viewport.longitudeNE - viewport.longitudeSW,
 			}
@@ -57,7 +57,10 @@ export default class Localizacoes extends Component {
 				/>
 				<View style={styles.mapaView}>
 					{ this.state.noConnection ?
-						<Image source={require('../../../../assets/images/mapa.jpg')}/>
+						<Image 
+							source={require('../../../../assets/images/mapa.jpg')}
+							style={styles.mapa}
+						/>
 						:
 						<MapCanvas region={this.sendNewRegion}/>
 					}
