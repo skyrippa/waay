@@ -21,27 +21,27 @@ export default class Cartao extends Component {
 	pickBackgroundImage = (banco) => {
 		switch(banco) {
 			case 'visa':
-				return require('../../../assets/images/card-visa.png');
+				return require('../../../../assets/images/card-visa.png');
 			case 'mastercard':
-				return require('../../../assets/images/card-mastercard.png');
+				return require('../../../../assets/images/card-mastercard.png');
 			case 'purple':
-				return require('../../../assets/images/card-purple.png');
+				return require('../../../../assets/images/card-purple.png');
 		}
 	}
 
 	pickQrCode = (banco) => {
 		switch(banco) {
 			case 'visa':
-				return require('../../../assets/images/qrcode-visa.jpg');
+				return require('../../../../assets/images/qrcode-visa.jpg');
 		}
 	}
 
 	pickBandeira = (banco) => {
 		switch(banco) {
 			case 'visa':
-				return require('../../../assets/images/bandeira-visa.jpg');
+				return require('../../../../assets/images/bandeira-visa.jpg');
 			case 'mastercard':
-				return require('../../../assets/images/bandeira-mastercard.jpg');
+				return require('../../../../assets/images/bandeira-mastercard.jpg');
 		}
 	}
 

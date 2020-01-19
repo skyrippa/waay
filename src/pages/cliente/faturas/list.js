@@ -19,19 +19,25 @@ export default class List extends Component {
     super(props);
     this.state = {
     	data: props.data,
+    	isClient: props.isClient,
     }
   }
 
   renderItem = ({ item }) => (
 		<View>
-				<Compra data={item} />
+				<Compra data={item} isClient={this.state.isClient}/>
 		</View>
 	)
 
 	render() {
+		const { isClient } = this.state;
 		return(
 			<View style={styles.list}>
-				<ListHeader data={this.state.data}/>
+				{ isClient ?
+					<ListHeader data={this.state.data}/>
+					:
+					<Text style={styles.listTitle}>Últimas vendas</Text>
+				}
 				<FlatList 
 					data={this.state.data}
 					keyExtractor={item => item._id}

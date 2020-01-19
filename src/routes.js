@@ -9,16 +9,19 @@ import React from 'react';
 import { Button, Image } from 'react-native';
 // telas login
 import MenuInicial from './pages/menuInicial/index';
-import SignIn from './pages/signIn/index';
-import SignInLojista from './pages/signInLojista/index';
+import SignIn from './pages/cliente/signIn/index';
+import SignInLojista from './pages/lojista/signInLojista/index';
 
-// telas do app
-import Faturas from './pages/faturas/index';
-import Cartoes from './pages/cartoes/index';
-import Localizacoes from './pages/localizacoes/index';
-import Vendas from './pages/vendas/index';
+// telas cliente
+import Faturas from './pages/cliente/faturas/index';
+import Cartoes from './pages/cliente/cartoes/index';
+import Localizacoes from './pages/cliente/localizacoes/index';
+// telas lojista
+import Vendas from './pages/lojista/vendas/index';
+import Perfil from './pages/lojista/perfil/index';
+import Tab1 from './pages/lojista/tab1/index';
 
-const MainNavigation = createBottomTabNavigator(
+const ClienteNavigation = createBottomTabNavigator(
 	{
 		Cartoes: {
 			screen: Cartoes,
@@ -90,6 +93,78 @@ const MainNavigation = createBottomTabNavigator(
 	},
 )
 
+const LojistaNavigation = createBottomTabNavigator(
+	{
+		Tab1: {
+			screen: Tab1,
+		},
+		Vendas: {
+			screen: Vendas,
+		},
+		Perfil: {
+			screen: Perfil,
+		},
+	},
+	{
+		defaultNavigationOptions: ({navigation}) => ({
+			tabBarIcon: ({ focused, horizontal, tintColor }) => {
+				const { routeName } = navigation.state;
+				if (routeName === 'Vendas') {
+					return (
+						<Image 
+							source={
+								focused
+									? require('../assets/images/home-on.png')
+									: require('../assets/images/home-off.png')
+							}
+							style={{
+								width: 30,
+								height: 30,
+							}}
+						/>
+					)
+				} else if (routeName === 'Tab1') {
+					return (
+						<Image 
+							source={
+								focused
+									? require('../assets/images/list-on.png')
+									: require('../assets/images/list-off.png')
+							}
+							style={{
+								width: 30,
+								height: 30,
+							}}
+						/>
+					)
+				} else if (routeName === 'Perfil') {
+					return (
+						<Image 
+							source={
+								focused
+									? require('../assets/images/avatar-on.png')
+									: require('../assets/images/avatar-off.png')
+							}
+							style={{
+								width: 36,
+								height: 36,
+							}}
+						/>
+					)
+				}
+			}
+		}),
+		initialRouteName: 'Vendas',
+		tabBarOptions: {
+			style: { 
+				backgroundColor: '#fff',
+				height: 60,
+			},
+			showLabel: false,
+		},
+	},
+)
+
 const App = createSwitchNavigator({
 	MenuInicial: {
 		screen: MenuInicial
@@ -106,14 +181,17 @@ const App = createSwitchNavigator({
 			headerShown: false,
 		}
 	},
-	MainNavigation: {
-		screen: MainNavigation,
+	ClienteNavigation: {
+		screen: ClienteNavigation,
 		navigationOptions: {
-			title: 'WAAY'
+			title: 'WAAY',
 		}
 	},
-	Vendas: {
-		screen: Vendas,
+	LojistaNavigation: {
+		screen: LojistaNavigation,
+		navigationOptions: {
+			title: 'WAAY',
+		}
 	}
 })
 

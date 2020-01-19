@@ -57,7 +57,7 @@ export default class DetalhesCartao extends Component {
 					style={{alignSelf: 'flex-start'}}
 				>
 					<Image 
-						source={require('../../../assets/images/left.png')}
+						source={require('../../../../assets/images/left.png')}
 						style={styles.returnButton}
 					/>
 				</TouchableOpacity>
@@ -77,7 +77,7 @@ export default class DetalhesCartao extends Component {
 						>
 						</RNCamera>
 						:
-						<Image source={require('../../../assets/images/qrcode.jpg')} style={styles.leitorQrCode}/>
+						<Image source={require('../../../../assets/images/qrcode.jpg')} style={styles.leitorQrCode}/>
 					}
 
 					<View >

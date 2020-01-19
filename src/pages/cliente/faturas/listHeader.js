@@ -54,7 +54,7 @@ export default class ListHeader extends Component {
 				>
 					<Image 
 						style={styles.img} 
-						source={require('../../../assets/images/search.png')} 
+						source={require('../../../../assets/images/search.png')} 
 					/>
 				</TouchableOpacity>
 			</View>

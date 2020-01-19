@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 import styles from './style';
 
-import Header from '../components/header';
+import Header from '../../components/header';
 import SearchBar from './searchbar';
 import MapCanvas from './mapCanvas';
 import DadosEmpresa from './dadosEmpresa';

@@ -15,7 +15,7 @@ export default class SearchBar extends Component {
 
 				<TouchableOpacity>
 					<Image 
-						source={require('../../../assets/images/search.png')}
+						source={require('../../../../assets/images/search.png')}
 						style={styles.searchButton}
 					/>
 				</TouchableOpacity>

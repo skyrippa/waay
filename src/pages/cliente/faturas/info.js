@@ -10,6 +10,7 @@ export default class Info extends Component {
     	saldo: '',
     	faturaAnterior: '',
     	faturaAtual: '',
+    	isClient: props.isClient,
   	}
   }
 
@@ -28,6 +29,11 @@ export default class Info extends Component {
   }
 
 	render() {
+
+		const textoCliente = ['Gastos do mês anterior','Gastos do mês atual'];
+		const textoLojista = ['Despesas mês anterior','Despesas mês atual'];
+		const { isClient } = this.state;
+
 		return(
 			<View style={styles.info}>
 				<View style={styles.saldo}>
@@ -36,11 +42,11 @@ export default class Info extends Component {
 				</View>
 				<View style={styles.faturas}>
 					<View style={styles.fatura}>
-						<Text style={styles.faturaText}>Gastos do mês anterior</Text>
+						<Text style={styles.faturaText}>{ isClient ? textoCliente[0] : textoLojista[0] }</Text>
 						<Text style={styles.faturaValor}>{this.state.faturaAnterior}</Text>
 					</View>
 					<View style={styles.fatura}>
-						<Text style={styles.faturaText}>Gastos do mês atual</Text>
+						<Text style={styles.faturaText}>{ isClient ? textoCliente[1] : textoLojista[1] }</Text>
 						<Text style={styles.faturaValor}>{this.state.faturaAtual}</Text>
 					</View>
 				</View>

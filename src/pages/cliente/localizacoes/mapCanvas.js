@@ -9,7 +9,7 @@ export default class MapCanvas extends Component {
 		return (
 			<View>
 				<Image 
-					source={require('../../../assets/images/mapa.jpg')}
+					source={require('../../../../assets/images/mapa.jpg')}
 					style={styles.mapa}
 				/>
 			</View>

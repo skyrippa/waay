@@ -11,6 +11,7 @@ export default class Compra extends Component {
     this.state = {
     	compra: props.data,
     	isModalVisible: false,
+    	isClient: props.isClient,
     }
   }
 
@@ -20,6 +21,7 @@ export default class Compra extends Component {
 
 	render() {
 		const { data, hora, valor, empresa } = this.state.compra;
+		const { isClient } = this.state;
 
 		return(
 			<View>
@@ -41,17 +43,21 @@ export default class Compra extends Component {
 				
 					</View>
 				</TouchableOpacity>
-				<Modal
-					transparent={true}
-					visible={this.state.isModalVisible}
-					onRequestClose={() => this.changeModalVisibility(false)}
-					animationType='fade'
-				>
-					<CompraDetalhes 
-						changeModalVisibility={this.changeModalVisibility}
-						data={this.state.compra}
-					/>
-				</Modal>
+				{ isClient ?
+					<Modal
+						transparent={true}
+						visible={this.state.isModalVisible}
+						onRequestClose={() => this.changeModalVisibility(false)}
+						animationType='fade'
+					>
+						<CompraDetalhes 
+							changeModalVisibility={this.changeModalVisibility}
+							data={this.state.compra}
+						/>
+					</Modal>
+					:
+					<View></View>
+				}
 			</View>
 		)
 	}
